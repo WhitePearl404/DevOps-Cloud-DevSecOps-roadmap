@@ -1,0 +1,10 @@
+# Lychee link-checker configuration
+# Keep rate-limited documentation hosts from overwhelming their servers.
+
+max_retries = 3
+retry_wait_time = 3
+max_concurrency = 8
+
+[hosts."docs.ansible.com"]
+concurrency = 1
+request_interval = "2s"
