@@ -1,6 +1,6 @@
 # Repository Development Roadmap
 
-This repository itself is built in stages.
+This repository is built in stages. The goal is depth, not a graveyard of technology names.
 
 ## Milestone 1 — Foundation
 
@@ -12,34 +12,38 @@ This repository itself is built in stages.
 - [x] Interview hub
 - [x] Initial interview question banks
 - [x] Resources hub
+- [x] MIT License
 
 ## Milestone 2 — Core curriculum
 
-- [ ] Linux deep dive
-- [ ] Networking deep dive
-- [ ] Git deep dive
-- [ ] Bash and Python automation
-- [ ] Docker deep dive
-- [ ] CI/CD deep dive
-- [ ] AWS fundamentals
-- [ ] Terraform deep dive
-- [ ] Kubernetes deep dive
+- [x] Linux foundation guide
+- [x] Networking foundation guide
+- [x] Git foundation guide
+- [x] Docker foundation guide
+- [x] AWS learning path
+- [x] AWS deep-dive curriculum
+- [x] Terraform/IaC foundation
+- [x] Terraform deep-dive guide
+- [x] Kubernetes foundation
+- [x] Kubernetes deep-dive guide
 
 ## Milestone 3 — Security curriculum
 
 - [ ] DevSecOps tool-by-tool guides
-- [ ] AWS cloud-security guides
-- [ ] Kubernetes security guides
+- [x] AWS cloud-security learning path
+- [x] Kubernetes security learning path
 - [ ] Supply-chain security labs
 - [ ] Runtime security labs
 - [ ] Security architecture case studies
 
 ## Milestone 4 — Operations
 
+- [x] Production engineering curriculum
+- [x] Troubleshooting playbook hub
 - [ ] Observability deep dive
 - [ ] SRE fundamentals
-- [ ] Production troubleshooting playbooks
 - [ ] Incident-response exercises
+- [ ] Disaster-recovery exercises
 
 ## Milestone 5 — Advanced platform engineering
 
@@ -52,7 +56,30 @@ This repository itself is built in stages.
 - [ ] AI infrastructure
 - [ ] Secure AI/agent runtime patterns
 
-## Milestone 6 — Interview library
+## Milestone 6 — Hands-on lab system
+
+- [x] Lab framework
+- [x] AWS VPC Terraform lab
+- [x] Kubernetes failure drill
+- [ ] DevSecOps supply-chain lab
+- [ ] Cloud detection-and-response lab
+- [ ] Production-readiness lab
+- [ ] Observability lab
+- [ ] Platform-engineering lab
+
+## Milestone 7 — Decision engineering
+
+- [x] Decision-guide framework
+- [x] Terraform vs OpenTofu
+- [x] EKS vs ECS
+- [x] Argo CD vs Flux
+- [ ] Docker vs Podman
+- [ ] Helm vs Kustomize
+- [ ] Kyverno vs OPA
+- [ ] VMs vs containers
+- [ ] Managed vs self-managed Kubernetes
+
+## Milestone 8 — Interview library
 
 Target eventually:
 
