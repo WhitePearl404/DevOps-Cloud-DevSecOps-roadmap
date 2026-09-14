@@ -1,6 +1,6 @@
 # Cloud Interview Questions
 
-Use four levels for every answer: **definition → mechanism → architecture → failure/trade-off**.
+Use the [Interview Answer Framework](./answer-framework.md) for every question. A strong answer moves from **definition → mechanism → architecture → evidence → failure/trade-off**.
 
 ## Fundamentals
 
@@ -63,6 +63,83 @@ Use four levels for every answer: **definition → mechanism → architecture �
 48. How would you safely deploy a high-risk change?
 49. How would you investigate a sudden latency increase?
 50. What makes a system production-ready?
+
+## High-value answer anchors
+
+Use these questions to practice the senior-level reasoning behind the list above:
+
+### 1. Design a highly available web application
+
+Cover:
+
+- requirements and availability target
+- request path
+- failure domains and AZ distribution
+- load balancing and health checks
+- stateless application scaling
+- stateful data layer and recovery
+- observability
+- security boundaries
+- deployment/rollback strategy
+- cost trade-offs
+
+Follow-ups: What fails first? What is the blast radius? How do you test an AZ failure? What changes for a stricter RTO?
+
+### 2. Design a private application tier
+
+Cover:
+
+- public vs private boundaries
+- ingress path
+- outbound requirements
+- routing
+- security groups/firewall controls
+- identity and secrets
+- private service access where appropriate
+- logging and detection
+
+Follow-up: What if the application does not need internet access at all?
+
+### 3. Respond to compromised cloud credentials
+
+Use:
+
+```text
+Detect → Validate → Contain → Preserve evidence → Scope → Recover → Prevent recurrence
+```
+
+Explain which identity should be disabled or rotated, which logs establish scope, how you avoid destroying evidence, and how you verify containment.
+
+### 4. Investigate sudden latency
+
+Start with:
+
+```text
+User impact
+→ Scope
+→ Recent changes
+→ Metrics
+→ Logs
+→ Traces
+→ Dependency health
+→ Network path
+→ Resource saturation
+```
+
+Do not assume CPU is the root cause merely because humans enjoy blaming CPU for everything.
+
+### 5. Explain production readiness
+
+Cover:
+
+- reliability and failure behavior
+- security boundaries
+- observability
+- backup/recovery
+- deployment safety
+- capacity/scaling
+- cost
+- documented operational ownership
 
 ## Scenario
 
