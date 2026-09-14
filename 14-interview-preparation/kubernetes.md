@@ -1,5 +1,7 @@
 # Kubernetes Interview Questions
 
+Use the [Interview Answer Framework](./answer-framework.md). For Kubernetes, be especially precise about **desired state, observed state, controllers, networking, scheduling, security and evidence**.
+
 ## Fundamentals
 
 1. What is Kubernetes?
@@ -49,3 +51,97 @@
 33. A Service has no traffic. What do you check?
 34. Pods can reach IPs but not DNS names. What do you check?
 35. A pod is healthy but the application is unavailable externally. How do you investigate?
+
+## High-value answer anchors
+
+### 1. Pod is Running but the application is unavailable
+
+Do not equate **Running** with **Ready** or **reachable**.
+
+Check the request path:
+
+```text
+Pod process
+→ Readiness
+→ Service selector/endpoints
+→ NetworkPolicy
+→ Ingress / LoadBalancer
+→ External client
+```
+
+Gather evidence at each boundary and identify the first layer where expected behavior stops.
+
+### 2. CrashLoopBackOff
+
+Use:
+
+```text
+Current state
+→ Previous container state / exit code
+→ Events
+→ Current and previous logs
+→ Configuration / secrets
+→ Dependencies
+→ Recent changes
+```
+
+Explain whether the process is crashing, being killed, failing its probes, or repeatedly starting with invalid configuration.
+
+### 3. Pod stuck Pending
+
+Investigate:
+
+- scheduler events
+- resource requests vs node capacity
+- taints/tolerations
+- affinity/anti-affinity
+- node selectors
+- topology constraints
+- PVC availability where relevant
+
+State the scheduling constraint before proposing a change.
+
+### 4. Service receives no traffic
+
+Check:
+
+```text
+Service selector
+→ EndpointSlice / endpoints
+→ Pod labels
+→ Pod readiness
+→ NetworkPolicy
+→ Service port / targetPort
+→ Ingress or external load balancer
+```
+
+The key is to distinguish a discovery problem from an application problem.
+
+### 5. Secure an EKS workload
+
+Cover:
+
+- IAM and workload identity
+- RBAC
+- Pod Security Standards
+- NetworkPolicy
+- secrets handling
+- image provenance and vulnerability controls
+- admission policy
+- runtime detection where justified
+- audit logging
+- least privilege
+
+Then explain which control protects which boundary.
+
+## Senior follow-ups
+
+For architecture and troubleshooting questions, expect:
+
+- What is the failure domain?
+- What evidence proves your hypothesis?
+- What is the blast radius?
+- How would you mitigate without causing more disruption?
+- How would you prevent recurrence?
+- What changes at 10x workload scale?
+- What is the operational cost of your design?
