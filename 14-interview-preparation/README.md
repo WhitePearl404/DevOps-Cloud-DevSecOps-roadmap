@@ -1,15 +1,17 @@
 # 14 — Interview Preparation
 
-This section is built around the way real technical interviews work: fundamentals, architecture, troubleshooting, trade-offs and follow-up questions.
+This section is built around the way real technical interviews work: fundamentals, architecture, troubleshooting, security, trade-offs and follow-up questions.
 
 ## 🎯 Preparation framework
 
-For every topic, prepare four levels:
+For every major topic, prepare four levels:
 
-1. **30-second answer** — simple definition
-2. **2-minute answer** — how it works
-3. **Architecture answer** — components and data flow
-4. **Scenario answer** — what you would do when it fails
+1. **30-second answer** — what it is and the problem it solves
+2. **2-minute answer** — how it works and where it fits
+3. **Architecture answer** — components, data flow, boundaries and failure domains
+4. **Scenario answer** — evidence, diagnosis, mitigation, recovery and prevention
+
+See the full [Interview Answer Framework](./answer-framework.md).
 
 ## 📚 Question banks
 
@@ -23,66 +25,79 @@ For every topic, prepare four levels:
 - [Troubleshooting](./troubleshooting.md)
 - [Scenario-based](./scenario-based.md)
 
-## 🧠 Interview answer template
+## 🧠 Default answer structure
 
 ```text
-1. Define the concept
-2. Explain why it exists
-3. Explain how it works
-4. Give a practical example
-5. Mention security/reliability concerns
-6. Discuss trade-offs
-7. Handle follow-up questions
+Define
+→ Explain the problem
+→ Explain the architecture / mechanism
+→ Give a practical example
+→ Cover security and reliability
+→ Discuss trade-offs
+→ Handle follow-ups
+```
+
+For production incidents:
+
+```text
+Symptom
+→ Scope
+→ Evidence
+→ Hypotheses
+→ Test
+→ Mitigate
+→ Verify
+→ Prevent
 ```
 
 ## 🔥 High-value interview areas
 
 ### DevOps
 - CI/CD architecture
-- Deployment strategies
-- Rollbacks
-- Pipeline security
-- Artifact management
+- deployment strategies
+- rollbacks
+- pipeline security
+- artifact management
 
 ### Cloud
 - VPC architecture
 - IAM
 - HA and DR
-- Scaling
-- Cost optimization
+- scaling
+- cost optimization
 
 ### Kubernetes
-- Cluster architecture
-- Scheduling
-- Networking
-- Storage
-- Security
-- Troubleshooting
+- cluster architecture
+- scheduling
+- networking
+- storage
+- security
+- troubleshooting
 
 ### DevSecOps
 - SAST/SCA/DAST
-- Secrets
+- secrets management
 - IaC security
-- Container security
+- container security
 - SBOM
-- Signing and provenance
+- signing and provenance
 
 ### Cloud Security
-- Least privilege
-- Detection and response
-- Security logging
+- least privilege
+- detection and response
+- security logging
 - Zero Trust
-- Incident response
+- incident response
 
 ## 🚨 Scenario practice
 
-Never answer a production incident with “I would restart the server.” Humanity has suffered enough.
+Production incidents should be answered with evidence and a recovery plan, not a collection of increasingly desperate restart commands.
 
 Practice scenarios such as:
 
 - deployment succeeded but users receive 5xx
-- pods are stuck Pending
-- pods are CrashLoopBackOff
+- Pods are stuck Pending
+- Pods are CrashLoopBackOff
 - DNS works intermittently
 - latency suddenly increases
 - AWS credentials are compromised
@@ -90,3 +105,19 @@ Practice scenarios such as:
 - container image contains a critical CVE
 - Argo CD reports drift
 - CI pipeline starts leaking secrets
+
+## Senior-level follow-ups
+
+For each scenario, be ready to answer:
+
+- What is the blast radius?
+- What evidence would you collect first?
+- What changed recently?
+- What is the safest immediate mitigation?
+- How would you verify recovery?
+- How would you prevent recurrence?
+- What trade-off does your proposed fix introduce?
+
+## Practice standard
+
+Do not memorize model answers. Use the question banks to practice reasoning under constraints and connect answers to evidence from labs and projects.
