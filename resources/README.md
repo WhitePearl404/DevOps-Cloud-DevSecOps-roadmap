@@ -6,22 +6,22 @@ Use authoritative sources first. Tutorials are useful, but production decisions 
 
 ### Cloud
 - AWS Documentation: https://docs.aws.amazon.com/
-- Microsoft Azure Documentation: https://learn.microsoft.com/azure/
-- Google Cloud Documentation: https://cloud.google.com/docs
+- Microsoft Azure Documentation: https://learn.microsoft.com/en-us/azure/
+- Google Cloud Documentation: https://docs.cloud.google.com/docs
 
 ### Cloud-native
 - CNCF: https://www.cncf.io/
-- Kubernetes: https://kubernetes.io/docs/
+- Kubernetes: https://kubernetes.io/docs/home/
 - OpenTelemetry: https://opentelemetry.io/docs/
-- Cilium: https://docs.cilium.io/
-- Kyverno: https://kyverno.io/docs/
-- Argo CD: https://argo-cd.readthedocs.io/
+- Cilium: https://docs.cilium.io/en/stable/
+- Kyverno: https://kyverno.io/docs/introduction/
+- Argo CD: https://argo-cd.readthedocs.io/en/stable/
 - Backstage: https://backstage.io/docs/
 
 ### Infrastructure
 - Terraform: https://developer.hashicorp.com/terraform/docs
 - OpenTofu: https://opentofu.org/docs/
-- Ansible: https://docs.ansible.com/
+- Ansible: https://docs.ansible.com/ansible/latest/
 
 ### Security
 - OWASP: https://owasp.org/
@@ -29,7 +29,7 @@ Use authoritative sources first. Tutorials are useful, but production decisions 
 - Sigstore: https://docs.sigstore.dev/
 - SLSA: https://slsa.dev/
 - Trivy: https://trivy.dev/
-- Semgrep: https://semgrep.dev/docs/
+- Semgrep: https://docs.semgrep.dev/
 - Gitleaks: https://github.com/gitleaks/gitleaks
 
 ## 🧪 Labs
