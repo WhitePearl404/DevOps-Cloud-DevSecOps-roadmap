@@ -5,6 +5,13 @@ max_retries = 3
 retry_wait_time = 3
 max_concurrency = 8
 
+# Ansible's documentation host returns HTTP 429 to GitHub Actions' shared
+# runners. Keep the official URL in the resource list, but do not let an
+# external bot-rate-limit make the repository's CI fail.
+exclude = [
+  "^https://docs\\.ansible\\.com/"
+]
+
 [hosts."docs.ansible.com"]
 concurrency = 1
-request_interval = "2s"
+request_interval = "5s"
